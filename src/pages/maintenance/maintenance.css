@@ -1,0 +1,46 @@
+/* Work order card grid (Maintenance Dashboard) */
+.wo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.wo-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.wo-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.wo-card__id {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.wo-card__type {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 860px) {
+  .wo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Repair notes / resolve panel (Work Order Detail) */
+.repair-panel {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+}

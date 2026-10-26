@@ -1,0 +1,395 @@
+.page-head {
+  margin-bottom: 28px;
+}
+
+.page-head__title {
+  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+  font-weight: 700;
+}
+
+.page-head__sub {
+  margin-top: 6px;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.panel + .panel {
+  margin-top: 20px;
+}
+
+.panel__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.panel__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.panel__title svg {
+  color: var(--primary);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 860px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Key/value rows */
+.kv-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.kv-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.kv-row dt {
+  color: var(--ink-soft);
+}
+
+.kv-row dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--ink);
+  text-align: right;
+}
+
+/* Status pills */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.pill-unpaid,
+.pill-submitted {
+  background: #FDECEA;
+  color: #B3261E;
+}
+
+.pill-paid,
+.pill-resolved,
+.pill-active {
+  background: #E3F3EC;
+  color: var(--status-ok);
+}
+
+.pill-assigned,
+.pill-inprogress {
+  background: #FFF1E1;
+  color: var(--accent-dark);
+}
+
+.pill-neutral {
+  background: var(--primary-tint);
+  color: var(--primary-dark);
+}
+
+/* Simple data table */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.data-table th {
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+  padding: 0 12px 10px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--ink-soft);
+}
+
+.empty-state svg {
+  color: var(--line);
+  margin: 0 auto 12px;
+}
+
+/* Form elements reused across customer pages */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.form-field--full {
+  grid-column: 1 / -1;
+}
+
+.form-field select,
+.form-field textarea,
+.form-field input {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  padding: 11px 14px;
+  font-size: 0.92rem;
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+
+.form-field select:focus,
+.form-field textarea:focus,
+.form-field input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+@media (max-width: 620px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Photo upload (Report an Issue) */
+.photo-upload {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.photo-upload__thumb {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+
+.photo-upload__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-upload__remove {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(22, 35, 43, 0.72);
+  color: #fff;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-upload__remove:hover {
+  background: rgba(22, 35, 43, 0.9);
+}
+
+.photo-upload__add {
+  width: 88px;
+  height: 88px;
+  border-radius: var(--radius-sm);
+  border: 1.5px dashed var(--line);
+  background: var(--bg);
+  color: var(--ink-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.photo-upload__add:hover {
+  border-color: var(--primary);
+  color: var(--primary-dark);
+}
+
+.photo-upload__hint {
+  margin-top: 10px;
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+/* Single photo preview (Report an Issue) */
+.photo-preview {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.photo-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-preview__remove {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(22, 35, 43, 0.72);
+  color: #fff;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-preview__remove:hover {
+  background: rgba(22, 35, 43, 0.9);
+}
+
+/* Disabled/read-only auth-style input (e.g. auto-filled Location field) */
+.auth__input--disabled {
+  background: var(--bg);
+}
+
+.auth__input--disabled input {
+  color: var(--ink-soft);
+  cursor: not-allowed;
+}
+
+/* Larger textarea variant for the Report an Issue description field */
+.textarea-large {
+  min-height: 160px;
+}
+
+/* Submission confirmation icon + tracking code */
+.confirm-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #E3F3EC;
+  color: var(--status-ok);
+  margin-bottom: 16px;
+}
+
+.confirm-code {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+}
+
+/* Small photo thumbnail inside the My Reports table */
+.report-row-thumb {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--line);
+}
+
+.report-row-thumb--empty {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--line);
+}
+
+/* Larger photo preview on the Incident Tracking detail page */
+.report-detail-photo {
+  max-width: 280px;
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  display: block;
+}

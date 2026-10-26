@@ -1,0 +1,136 @@
+.dash {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.dash__bar {
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.dash__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.dash__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--primary);
+  color: #fff;
+}
+
+.dash__bar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.dash__badge {
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.dash__identifier {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.dash__logout {
+  padding: 8px 14px;
+}
+
+.dash__content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 48px 32px 80px;
+}
+
+.dash__title {
+  margin-top: 10px;
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  font-weight: 700;
+}
+
+.dash__sub {
+  margin-top: 8px;
+  color: var(--ink-soft);
+}
+
+.dash__grid {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.dash__card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 22px;
+}
+
+.dash__card svg {
+  color: var(--primary);
+}
+
+.dash__card h3 {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.dash__stat {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.dash__meta {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 960px) {
+  .dash__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .dash__bar {
+    padding: 0 18px;
+  }
+
+  .dash__identifier {
+    display: none;
+  }
+
+  .dash__content {
+    padding: 32px 18px 56px;
+  }
+
+  .dash__grid {
+    grid-template-columns: 1fr;
+  }
+}

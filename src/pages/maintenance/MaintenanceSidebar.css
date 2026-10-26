@@ -1,0 +1,109 @@
+.msidebar {
+  display: flex;
+  flex-direction: column;
+  width: 248px;
+  flex-shrink: 0;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 22px 16px;
+}
+
+.msidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #fff;
+  padding: 6px 10px 22px;
+}
+
+.msidebar__brand small {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.msidebar__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--status-ok);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.msidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.msidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+  position: relative;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.msidebar__link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.msidebar__link.is-active {
+  background: var(--status-ok);
+  color: #fff;
+}
+
+.msidebar__logout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  margin-top: 12px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.msidebar__logout:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+@media (max-width: 960px) {
+  .msidebar {
+    position: fixed;
+    z-index: 60;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.25);
+  }
+
+  .msidebar.is-open {
+    transform: translateX(0);
+  }
+}
